@@ -14,10 +14,17 @@ for (let n = -100; n <= 500; n += 20) {
 for (let n = 5; n >= 0; n--) {
     console.log(n)
 }
-*/
+
 for (let n = 0; n <= 100; n++) {
     const par = n % 2 === 0 ? 'Par' : 'Impar';
     console.log(n, par)
+}
+*/
+
+const frutas = ['Maçã', 'Pera','Banana','Goiaba','Manga','Abacaxi','Bergamota']
+
+for (let i = 0; i < frutas.length; i++) {
+    console.log(`Indice ${i}`, frutas[i])
 }
 
 
