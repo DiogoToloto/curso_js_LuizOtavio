@@ -31,9 +31,17 @@ body {
     text-align: center;
 }
 
-.texto {
+.relogio {
     font-size: 2rem;
     margin-bottom: 10px;
+}
+
+.timer-preto{
+    color: #000;
+}
+
+.timer-vermelho {
+    color: #ff0000;
 }
 
 #lista {
