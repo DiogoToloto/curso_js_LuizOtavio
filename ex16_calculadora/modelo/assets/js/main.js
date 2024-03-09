@@ -1,15 +1,29 @@
 function criaCalculadora() {
     return {
         display: document.querySelector('.display'),
-        btnClear: document.querySelector('.btn-clear'),
+        
 
         iniciar() {
             this.cliqueBotoes();
             this.pressionaEnter();
+            this.pressionaBackSpace();
         },
 
         pressionaEnter() {
+            this.display.addEventListener('keyup', elemento => {
+                if (elemento.keyCode === 13) {
+                    this.realizaConta();
+                }
+            })
+        },
 
+        pressionaBackSpace() {
+            this.display.addEventListener('keydown', elemento => {
+                if (elemento.keyCode === 8) {
+                    elemento.preventDefault();
+                    this.clearDisplay();
+                }
+            }) 
         },
 
         realizaConta() {
@@ -59,6 +73,8 @@ function criaCalculadora() {
                 if (elemento.classList.contains('btn-eq')) {
                     this.realizaConta();
                 }
+
+                this.display.focus();
             });
         },
 
