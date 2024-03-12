@@ -1,34 +1,31 @@
+function Calculadora(display) {
 
-
-function criaCalculadora() {
-    return {
-        display: document.querySelector('.display'),
+        this.display = display
         
-
-        iniciar() {
+        this.iniciar = () => {
             this.cliqueBotoes();
             this.pressionaEnter();
             this.pressionaBackSpace();
-        },
+        };
 
-        pressionaEnter() {
-            this.display.addEventListener('keyup', elemento => {
-                if (elemento.keyCode === 13) {
+        this.pressionaEnter = () => {
+            document.addEventListener('keyup', elemento => {
+                if (elemento.key === 'Enter') {
                     this.realizaConta();
                 }
             })
-        },
+        };
 
-        pressionaBackSpace() {
+        this.pressionaBackSpace = () => {
             this.display.addEventListener('keydown', elemento => {
-                if (elemento.keyCode === 8) {
+                if (elemento.key === 'Backspace') {
                     elemento.preventDefault();
                     this.clearDisplay();
                 }
             }) 
-        },
+        };
 
-        realizaConta() {
+        this.realizaConta = () => {
             let conta = this.display.value;
 
             try {
@@ -45,46 +42,32 @@ function criaCalculadora() {
                 return;
             }
 
-        },
+        };
 
-        clearDisplay() {
-            this.display.value = '';
-        },
-
-        apagaUm() {
-            this.display.value = this.display.value.slice(0, -1);
-        },
+        this.clearDisplay = () => this.display.value = '';
+        this.apagaUm = () => this.display.value = this.display.value.slice(0, -1);
 
 
-        cliqueBotoes() {
-            document.addEventListener('click', e => {
-                const elemento = e.target;
+        this.cliqueBotoes = () => {
+            document.addEventListener('click', evento => {
+                const elemento = evento.target;
 
-                if (elemento.classList.contains('btn-num')) {
-                    this.btnParaDisplay(elemento.innerText);
-                }
-
-                if (elemento.classList.contains('btn-clear')) {
-                    this.clearDisplay();
-                }
-
-                if (elemento.classList.contains('btn-del')) {
-                    this.apagaUm();
-                }
-
-                if (elemento.classList.contains('btn-eq')) {
-                    this.realizaConta();
-                }
-
-                this.display.focus();
+                if (elemento.classList.contains('btn-num')) this.addNumDisplay(elemento);
+                if (elemento.classList.contains('btn-clear')) this.clearDisplay();
+                if (elemento.classList.contains('btn-del')) this.apagaUm();
+                if (elemento.classList.contains('btn-eq')) this.realizaConta();
             });
-        },
+        };
 
-        btnParaDisplay(valor) {
+        this.addNumDisplay = elemento => {
+            this.display.value += elemento.innerText;
+            this.display.focus();
+        }
+
+        this.btnParaDisplay = (valor) => {
             this.display.value += valor;
         }
     };
-}
 
-const calculadora = criaCalculadora();
+const calculadora = new Calculadora(document.querySelector('.display'));
 calculadora.iniciar();
