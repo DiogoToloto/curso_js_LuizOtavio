@@ -16,7 +16,7 @@ function formataData() {
 
 const data = new Date();
 const dataBrasil = formataData(data);
-console.log(dataBrasil);7
+console.log(dataBrasil);
 
 
 /*

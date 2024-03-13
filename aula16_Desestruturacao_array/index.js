@@ -5,6 +5,11 @@ const [lista1, lista2, lista3] = numeros;
 console.log(lista2[2]);
 */
 
-let frutas = [['morango','framboesa','blueberry'],['limao','laranja','tanjerina'],['uva','banana','maça']]
-let [lista1, lista2, lista3] = frutas
-console.log(lista2)
+let cores = ['branco','verde','azul','amarelo','marom','rosa','vermelho']
+cores.push('lilas')
+cores.unshift('preto')
+let [cor1,cor2,cor3,...cor4] = cores;
+
+console.log(cores)
+
+

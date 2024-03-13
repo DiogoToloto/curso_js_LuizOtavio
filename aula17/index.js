@@ -14,4 +14,4 @@ const  {
     rua: r, numero
 }
 } = pessoa;
-console.log(pessoa.endereco);
+console.log(pessoa);

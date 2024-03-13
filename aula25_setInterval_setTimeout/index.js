@@ -12,7 +12,7 @@ const timer = setInterval(function() {
 
 setTimeout(function() {
     clearInterval(timer);
-}, 10000);
+}, 100000);
 
 setTimeout(function() {
     console.log('Olá meu amigo')

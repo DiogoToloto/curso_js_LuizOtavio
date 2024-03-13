@@ -20,12 +20,14 @@ for (let n = 0; n <= 100; n++) {
     console.log(n, par)
 }
 */
+let cores = ['Azul','Preto','Branco','Vermelho','Verde','Rosa','Roxo','Salmão']
 
-const frutas = ['Maçã', 'Pera','Banana','Goiaba','Manga','Abacaxi','Bergamota']
-
-for (let i = 0; i < frutas.length; i++) {
-    console.log(`Indice ${i}`, frutas[i])
+for (let i = 0; i < cores.length; i++) {
+    console.log(cores[i])
 }
 
+for (let valor of cores) {
+    console.log(cores[valor])
+}
 
 
