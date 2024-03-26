@@ -14,13 +14,4 @@ Object.defineProperty (define uma propriedade)
 */
 
 const produto = {nome: 'Caneca', preco: 1.80};
-const outraCoisa = { // object.assign({}, produto, {material: "Porcelana"})
-    ...produto,
-    material: "Porcelana"
-};
-
-outraCoisa.nome = "Garrafa";
-outraCoisa.preco = 2.5
-
-console.log(produto)
-console.log(outraCoisa)
+console.log(Object.entries(produto))
