@@ -34,4 +34,4 @@ function criaProduto(nome) {
 }
 
 const p1 = new Produto('Camiseta', 20, 3)
-console.log(p1);
+console.log(p1.estoque);
