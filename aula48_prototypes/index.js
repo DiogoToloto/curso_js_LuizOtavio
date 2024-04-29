@@ -4,7 +4,7 @@
 Definição de protótipo:
     Protótipo é o termo usado para se referir ao que foi criado pela primeira vez, servindo de modelo ou molde para futuras produções.
 
-    Todos os objestos tem uma referência interna para um protótipo (_Proto_) que vem da propriedade da função construtora que foi usada para criá_lo. quando tentamos acessar um membro de um objeto, primeiro o motor do JS vai tentar encontrar este membro no próprio objeto e depois a cadeia de protótipos é usada até o topo (null) até encontrar (ou não) tal membro.
+    Todos os objtos tem uma referência interna para um protótipo (_Proto_) que vem da propriedade da função construtora que foi usada para criá_lo. quando tentamos acessar um membro de um objeto, primeiro o motor do JS vai tentar encontrar este membro no próprio objeto e depois a cadeia de protótipos é usada até o topo (null) até encontrar (ou não) tal membro.
 */
 
 function Pessoa(nome, sobrenome) {
@@ -18,4 +18,8 @@ Pessoa.prototype.nomeCompleto = function() {
 }
 
 const pessoa1 = new Pessoa("Diogo","Gabriel")
-console.log(pessoa1)
+const pessoa2 = new Pessoa("Mariana", "Silva")
+
+console.log(pessoa1.nomeCompleto())
+console.log(pessoa2.nomeCompleto())
+console.log(pessoa1.__proto__.nomeCompleto())
