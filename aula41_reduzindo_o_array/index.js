@@ -24,4 +24,5 @@ const maisVelha = pessoa.reduce(function(acumulador,valor) {
     if(acumulador.idade > valor.idade) return acumulador;
     return valor
 });
+console.log(total)
 console.log(maisVelha)
